@@ -90,49 +90,9 @@ const Login = ({ onSubmit, schema, children }) => {
                   label={formatMessage({ id: 'Auth.form.email.label', defaultMessage: 'Email' })}
                   placeholder={formatMessage({
                     id: 'Auth.form.email.placeholder',
-                    defaultMessage: 'kai@doe.com',
+                    defaultMessage: 'name@nvpc.org.sg',
                   })}
                   name="email"
-                  required
-                />
-                <PasswordInput
-                  error={
-                    errors.password
-                      ? formatMessage({
-                          id: errors.password,
-                          defaultMessage: 'This value is required.',
-                        })
-                      : ''
-                  }
-                  onChange={handleChange}
-                  value={values.password}
-                  label={formatMessage({
-                    id: 'global.password',
-                    defaultMessage: 'Password',
-                  })}
-                  name="password"
-                  type={passwordShown ? 'text' : 'password'}
-                  endAction={
-                    <FieldActionWrapper
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setPasswordShown((prev) => !prev);
-                      }}
-                      label={formatMessage(
-                        passwordShown
-                          ? {
-                              id: 'Auth.form.password.show-password',
-                              defaultMessage: 'Show password',
-                            }
-                          : {
-                              id: 'Auth.form.password.hide-password',
-                              defaultMessage: 'Hide password',
-                            }
-                      )}
-                    >
-                      {passwordShown ? <Eye /> : <EyeStriked />}
-                    </FieldActionWrapper>
-                  }
                   required
                 />
                 <PasswordInput
